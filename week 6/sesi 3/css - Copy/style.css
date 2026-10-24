@@ -1,0 +1,266 @@
+:root {
+    --brand: #5478c8;
+    --brand-dark: #344f91;
+    --ink: #18294b;
+    --background: #f4f7fc;
+    --card-background: #ffffff;
+    --space: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--ink);
+    background: var(--background);
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+header,
+nav,
+main,
+footer {
+    width: 100%;
+    max-width: 60rem;
+    margin-inline: auto;
+    padding-inline: var(--space);
+}
+.site-header {
+    max-width: none;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    color: white;
+    background: var(--brand);
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+    line-height: 1.2;
+}
+
+.site-header p {
+    margin: 0.5rem 0 0;
+}
+
+nav {
+    max-width: none;
+    background: var(--brand-dark);
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    list-style: none;
+}
+
+.nav-list a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 0.25rem 0;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    scroll-margin-top: 1rem;
+}
+
+h1 { 
+    font-size: clamp(1.75rem, 1.2rem + 2vw, 3rem); }
+.card-wrap { 
+    container-type: inline-size; }
+@container (min-width: 30rem) {
+ .card {
+     padding: 1.5rem; }
+}
+
+h2 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+p {
+    margin-top: 0;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.garuda {
+    display: block;
+    width: 10rem;
+    max-width: 35%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 0;
+}
+
+button {
+    max-width: 100%;
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 0.4rem;
+    color: white;
+    background: var(--brand);
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--brand-dark);
+}
+
+#greeting-message {
+    min-height: 1.5rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background: #e5edff;
+    color: var(--brand-dark);
+}
+
+.galeri {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.galeri img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.catalog {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 0.75rem;
+    border: 1px solid #e0e6f1;
+    border-radius: 0.6rem;
+    background: var(--card-background);
+    box-shadow: 0 2px 8px rgb(24 41 75 / 6%);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.35rem;
+}
+
+.card h3,
+.card p {
+    margin: 0;
+}
+
+.card a {
+    align-self: start;
+    margin-top: auto;
+    color: var(--brand);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+#kontak {
+    margin-bottom: 0;
+}
+
+footer {
+    max-width: none;
+    padding-block: 0.75rem;
+    color: white;
+    background: var(--brand);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #e09cdb;
+    outline-offset: 3px;
+}
+
+@media (min-width: 48rem) {
+    .galeri {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .catalog {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 64rem) {
+    .galeri {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .catalog {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+}

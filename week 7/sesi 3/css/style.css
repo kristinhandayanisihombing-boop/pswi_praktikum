@@ -1,0 +1,585 @@
+```css
+/* ========================================
+   1. PENGATURAN DASAR
+======================================== */
+:root {
+    --brand: #5478c8;
+    --brand-dark: #344f91;
+    --brand-light: #e8efff;
+    --ink: #263653;
+    --muted: #6d7c96;
+    --background: #f4f7fc;
+    --card: #ffffff;
+    --border: #e0e8f5;
+    --shadow: 0 8px 24px rgba(52, 79, 145, 0.08);
+    --shadow-hover: 0 14px 30px rgba(52, 79, 145, 0.14);
+    --radius: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 5% 5%, #e8efff 0, transparent 25%),
+        radial-gradient(circle at 95% 40%, #edf2ff 0, transparent 25%),
+        var(--background);
+    color: var(--ink);
+    line-height: 1.8;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--brand-dark);
+}
+
+/* ========================================
+   2. HEADER
+======================================== */
+.site-header,
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #5478c8 0%,
+        #4568b1 55%,
+        #344f91 100%
+    );
+}
+
+/* Dekorasi lingkaran */
+.site-header::before,
+header::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -90px;
+    left: -45px;
+    border: 25px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.site-header::after,
+header::after {
+    content: "✦";
+    position: absolute;
+    right: 8%;
+    bottom: 12px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 2rem;
+    pointer-events: none;
+}
+
+.site-header h1,
+header h1 {
+    position: relative;
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.25;
+    letter-spacing: -1px;
+}
+
+.site-header p,
+header p {
+    position: relative;
+    max-width: 700px;
+    margin: 8px auto;
+    color: #edf2ff;
+    font-size: 1.05rem;
+}
+
+/* ========================================
+   3. NAVIGASI
+======================================== */
+.main-nav,
+nav {
+    position: relative;
+    z-index: 2;
+    padding: 14px 20px;
+    background: rgba(52, 79, 145, 0.98);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-list a {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.97rem;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+    background-color: white;
+    color: var(--brand-dark);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* ========================================
+   4. KONTEN UTAMA
+======================================== */
+main {
+    width: min(100% - 36px, 1050px);
+    margin: 40px auto;
+}
+
+section {
+    position: relative;
+    margin-bottom: 28px;
+    padding: 30px;
+    overflow-wrap: anywhere;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+section:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+section h2 {
+    margin: 0 0 18px;
+    color: var(--brand-dark);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    line-height: 1.4;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        var(--brand),
+        #a8bdf1
+    );
+}
+
+section p {
+    margin: 0 0 14px;
+}
+
+section p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   5. PROFIL
+======================================== */
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-text p {
+    color: var(--muted);
+}
+
+.garuda {
+    width: 190px;
+    flex-shrink: 0;
+    object-fit: contain;
+    padding: 12px;
+    background-color: #f8faff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.garuda:hover {
+    transform: translateY(-4px) rotate(1deg);
+}
+
+/* ========================================
+   6. GALERI
+======================================== */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.galeri img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.galeri img:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* ========================================
+   7. KARTU KEGIATAN
+======================================== */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    padding: 22px;
+    overflow-wrap: anywhere;
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f7f9ff
+    );
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #b8c9f0;
+    box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    color: var(--brand-dark);
+    font-size: 1.15rem;
+    line-height: 1.5;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 0.97rem;
+}
+
+/* ========================================
+   8. TOMBOL
+======================================== */
+button {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        var(--brand),
+        var(--brand-dark)
+    );
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(52, 79, 145, 0.18);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(52, 79, 145, 0.25);
+    filter: brightness(1.08);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #a8bdf1;
+    outline-offset: 3px;
+}
+
+#greeting-message {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border-left: 4px solid var(--brand);
+    border-radius: 0 10px 10px 0;
+    background-color: var(--brand-light);
+    color: var(--brand-dark);
+}
+
+/* ========================================
+   9. TABEL JADWAL
+======================================== */
+#jadwal {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+#jadwal th,
+#jadwal td {
+    padding: 13px 15px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+#jadwal th {
+    background-color: var(--brand-dark);
+    color: white;
+    font-weight: 600;
+}
+
+#jadwal tbody tr:nth-child(even) {
+    background-color: #f3f6ff;
+}
+
+#jadwal tbody tr:hover {
+    background-color: #e8efff;
+}
+
+#jadwal tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========================================
+   10. FORMULIR
+   Berlaku jika elemen form tersedia
+======================================== */
+form {
+    display: grid;
+    gap: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--brand-dark);
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd7ed;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: var(--ink);
+    font: inherit;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--brand);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(84, 120, 200, 0.14);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #8997ae;
+}
+
+/* ========================================
+   11. FOOTER
+======================================== */
+footer {
+    position: relative;
+    margin-top: 45px;
+    padding: 28px 20px;
+    background: linear-gradient(
+        135deg,
+        #344f91,
+        #263e76
+    );
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #dce7ff;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* ========================================
+   12. TAMPILAN TABLET
+======================================== */
+@media (max-width: 800px) {
+    main {
+        width: min(100% - 28px, 700px);
+        margin: 28px auto;
+    }
+
+    section {
+        padding: 24px;
+    }
+
+    .catalog,
+    .galeri {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .garuda {
+        width: 160px;
+    }
+}
+
+/* ========================================
+   13. TAMPILAN HP
+======================================== */
+@media (max-width: 600px) {
+    .site-header,
+    header {
+        padding: 36px 16px;
+    }
+
+    .site-header h1,
+    header h1 {
+        letter-spacing: -0.5px;
+    }
+
+    .main-nav,
+    nav {
+        padding: 12px 10px;
+    }
+
+    .nav-list {
+        gap: 6px;
+    }
+
+    .nav-list a {
+        padding: 7px 11px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        width: calc(100% - 24px);
+        margin: 22px auto;
+    }
+
+    section {
+        padding: 19px;
+        margin-bottom: 20px;
+        border-radius: 14px;
+    }
+
+    .catalog,
+    .galeri {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .card {
+        padding: 19px;
+    }
+
+    .garuda {
+        width: 140px;
+    }
+
+    .galeri img {
+        height: auto;
+        max-height: 280px;
+    }
+
+    #jadwal th,
+    #jadwal td {
+        padding: 9px;
+        font-size: 0.88rem;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
+
+/* ========================================
+   14. PENGGUNA YANG MENGURANGI ANIMASI
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+```

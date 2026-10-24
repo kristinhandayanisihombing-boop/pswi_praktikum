@@ -1,0 +1,154 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --brand: #b7cbf2;
+    --ink: #0c192c;
+    --space: 1rem;
+}
+
+body {
+    margin: 0;
+    padding: var(--space);
+    color: var(--ink);
+    background: #9cb5e6;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+header,
+nav,
+main,
+footer {
+    width: 100%;
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.notice {
+    max-width: 65ch;
+}
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.nav-list a {
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.catalog {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 48rem) {
+    .catalog {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #ec9ee6;
+    border-radius: 0.5rem;
+    background: rgb(202, 167, 167); 
+}
+
+.card h2,
+.card h3,
+.card p {
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.card a {
+    align-self: start;
+    overflow-wrap: anywhere;
+}
+
+.card h2,
+.card h3,
+.card p {
+    overflow-wrap: anywhere; 
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    font: inherit;
+}
+
+.nav-list { display: flex; 
+    flex-wrap: wrap; 
+    gap: .75rem; }
+input, select, textarea { max-width: 100%; 
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    max-width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    overflow-wrap: anywhere;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+}
+
+footer {
+    padding-top: 1rem;
+    border-top: 1px solid #aab4c2;
+}

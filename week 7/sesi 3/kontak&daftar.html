@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html lang="id">
+    
+            <a href="index.html">Beranda</a> |
+            <a href="kegiatan.html">Kegiatan</a> |
+            <a href="kontak%26daftar.html" aria-current="page">Kontak dan Daftar</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Bagian Informasi Kontak -->
+        <section aria-labelledby="judul-kontak">
+            <h2 id="judul-kontak">Informasi Kontak</h2>
+
+            <address>
+                <p>Sekretariat Komunitas Web, Gedung Rektorat IT Del</p>
+
+                <p>
+                    Email:
+                    <a href="mailto:web@example.ac.id">
+                        web@example.ac.id
+                    </a>
+                </p>
+
+                <p>
+                    Telepon:
+                    <a href="tel:+62877260921">
+                        +62877260921
+                    </a>
+                </p>
+            </address>
+
+            <h3>Jam Layanan</h3>
+
+            <ul>
+                <li>Senin–Jumat: 08.00–17.00 WIB</li>
+                <li>Sabtu–Minggu: Libur</li>
+            </ul>
+        </section>
+
+        <!-- Bagian Pendaftaran Kegiatan -->
+        <section aria-labelledby="judul-pendaftaran">
+            <h2 id="judul-pendaftaran">Pendaftaran Kegiatan</h2>
+
+            <p>Kolom bertanda wajib harus diisi.</p>
+
+            <form action="#" method="get">
+                <p>
+                    <label for="nama">Nama lengkap (wajib)</label>
+                    <input
+                        id="nama"
+                        name="nama"
+                        type="text"
+                        autocomplete="name"
+                        required>
+                </p>
+
+                <p>
+                    <label for="kode">Kode peserta (wajib)</label>
+                    <input
+                        id="kode"
+                        name="kode"
+                        type="text"
+                        inputmode="numeric"
+                        pattern="[0-9]{6}"
+                        aria-describedby="kode-help"
+                        required>
+
+                    <small id="kode-help">
+                        Masukkan kode peserta yang terdiri dari 6 angka.
+                    </small>
+                </p>
+
+                <p>
+                    <label for="email">Email (wajib)</label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required>
+                </p>
+
+                <p>
+                    <label for="telepon">Nomor telepon</label>
+                    <input
+                        id="telepon"
+                        name="telepon"
+                        type="tel"
+                        autocomplete="tel">
+                </p>
+
+                <p>
+                    <label for="tiket">Jumlah tiket</label>
+                    <input
+                        id="tiket"
+                        name="tiket"
+                        type="number"
+                        min="1"
+                        max="5"
+                        step="1">
+                </p>
+
+                <p>
+                    <label for="prodi">Program studi (wajib)</label>
+                    <select id="prodi" name="prodi" required>
+                        <option value="">Pilih program studi</option>
+                        <option value="trpl">D4 TRPL</option>
+                        <option value="ti">D3 Teknologi Informasi</option>
+                    </select>
+                </p>
+
+                <fieldset>
+                    <legend>Mode kehadiran (wajib)</legend>
+
+                    <input
+                        id="luring"
+                        name="mode"
+                        type="radio"
+                        value="luring"
+                        required>
+                    <label for="luring">Luring</label>
+
+                    <input
+                        id="daring"
+                        name="mode"
+                        type="radio"
+                        value="daring">
+                    <label for="daring">Daring</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Minat topik</legend>
+
+                    <input
+                        id="topik-html"
+                        name="topik"
+                        type="checkbox"
+                        value="html">
+                    <label for="topik-html">HTML</label>
+
+                    <input
+                        id="topik-aksesibilitas"
+                        name="topik"
+                        type="checkbox"
+                        value="aksesibilitas">
+                    <label for="topik-aksesibilitas">Aksesibilitas</label>
+                </fieldset>
+
+                <p>
+                    <label for="catatan">Catatan (opsional)</label>
+                    <textarea
+                        id="catatan"
+                        name="catatan"
+                        rows="4"
+                        maxlength="300"></textarea>
+                </p>
+
+                <button type="submit">Daftar</button>
+            </form>
+        </section>
+
+        <!-- Gambar pendukung -->
+        <figure>
+            <img
+                src="https://tse3.mm.bing.net/th/id/OIP.LYWAvH21mminCv2zEr6XLAHaFO?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Pintu masuk aula di sisi timur gedung">
+            <figcaption>
+                Area kegiatan komunitas mahasiswa.
+            </figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Komunitas Web Mahasiswa. Semua hak dilindungi.</p>
+    </footer>
+</body>
+
+</html>

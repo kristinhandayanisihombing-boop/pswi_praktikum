@@ -1,0 +1,294 @@
+
+/* =========================
+   1. Pengaturan Dasar
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fc;
+    color: #263653;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================
+   2. Header
+========================= */
+.site-header,
+header {
+    background-color: #5478c8;
+    color: white;
+    text-align: center;
+    padding: 28px 16px;
+}
+
+.site-header h1,
+header h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 10px;
+}
+
+.site-header p,
+header p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+/* =========================
+   3. Navigasi
+========================= */
+.main-nav,
+nav {
+    background-color: #344f91;
+    padding: 14px 16px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+    color: #cbdcff;
+}
+
+/* =========================
+   4. Konten Utama
+========================= */
+main {
+    width: min(100% - 32px, 1000px);
+    margin: 32px auto;
+}
+
+section {
+    background-color: white;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #e0e8f5;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(52, 79, 145, 0.06);
+    overflow-wrap: anywhere;
+}
+
+section h2 {
+    color: #344f91;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+section p {
+    margin-bottom: 12px;
+}
+
+/* =========================
+   5. Profil
+========================= */
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.garuda {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================
+   6. Galeri
+========================= */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.galeri img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* =========================
+   7. Kartu Kegiatan
+========================= */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.card {
+    padding: 18px;
+    background-color: #f8faff;
+    border: 1px solid #e0e8f5;
+    border-radius: 10px;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 14px rgba(52, 79, 145, 0.1);
+}
+
+.card h3 {
+    color: #344f91;
+    margin-top: 0;
+}
+
+/* =========================
+   8. Tombol
+========================= */
+button {
+    padding: 10px 18px;
+    background-color: #5478c8;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #344f91;
+}
+
+#greeting-message {
+    margin-top: 12px;
+    color: #344f91;
+}
+
+/* =========================
+   9. Tabel Jadwal
+========================= */
+#jadwal {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#jadwal th,
+#jadwal td {
+    padding: 12px;
+    border: 1px solid #dce5f5;
+    text-align: left;
+}
+
+#jadwal th {
+    background-color: #344f91;
+    color: white;
+}
+
+#jadwal tbody tr:nth-child(even) {
+    background-color: #f4f7fc;
+}
+
+/* =========================
+   10. Footer
+========================= */
+footer {
+    background-color: #344f91;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 32px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =========================
+   11. Tampilan Tablet
+========================= */
+@media (max-width: 800px) {
+    .catalog,
+    .galeri {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* =========================
+   12. Tampilan HP
+========================= */
+@media (max-width: 600px) {
+    .site-header,
+    header {
+        padding: 24px 14px;
+    }
+
+    .nav-list {
+        gap: 10px 18px;
+    }
+
+    .nav-list a {
+        font-size: 0.95rem;
+    }
+
+    main {
+        width: calc(100% - 24px);
+        margin: 22px auto;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    .catalog,
+    .galeri {
+        grid-template-columns: 1fr;
+    }
+
+    .garuda {
+        width: 160px;
+    }
+
+    .galeri img {
+        height: auto;
+        max-height: 280px;
+    }
+
+    #jadwal th,
+    #jadwal td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}

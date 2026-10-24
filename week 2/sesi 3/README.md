@@ -1,0 +1,2 @@
+saya menggunakan AI Gpt untuk memahami bagaimana cara mengerjakan secara bertahap, dan untuk menanyakan mengapa validasi di <kegiatan.html saya error
+saya juga menggunakan AI untuk melihat kode saya apakah benar atau tidak
